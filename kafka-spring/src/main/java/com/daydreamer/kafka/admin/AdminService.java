@@ -25,13 +25,13 @@ public class AdminService {
         /*参数1： topicName
          * 参数2： 分区数：分区数小于服务器数
          * 参数3： 副本数：副本数应该是服务器数-1*/
-        NewTopic topic = new NewTopic(topicName, 1, (short) 2);
+        NewTopic topic = new NewTopic(topicName, 3, (short) 2);
         topics.add(topic);
         CreateTopicsResult createTopicsResult = adminClient.createTopics(topics);
         log.info(createTopicsResult.toString());
     }
 
-    public Set<String> listTopics() {
+    public Set<String> listTopics () {
         try {
             return adminClient.listTopics().names().get();
         } catch (Exception e) {

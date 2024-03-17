@@ -51,6 +51,7 @@ public class ProducerService<K, V> {
 
             if (ObjectUtils.isNotEmpty(result) || result instanceof RecordMetadata) {
                 RecordMetadata metadata = (RecordMetadata) result;
+                log.info(String.valueOf(metadata));
                 log.info("Topic: {}, Partition: {}", metadata.topic(), metadata.partition());
             }
         } catch (Exception e) {

@@ -1,0 +1,23 @@
+spring:
+  kafka:
+    bootstrap-servers: '118.31.237.198:9092,120.55.75.185:9092,118.178.93.223:9092'
+
+    producer:
+      acks: -1
+      key-serializer: 'org.apache.kafka.common.serialization.StringSerializer'
+      value-serializer: 'org.apache.kafka.common.serialization.StringSerializer'
+      retries: 5
+      compression-type: snappy
+      properties:
+        linger.ms: 1000
+        max.in.flight.requests.per.connection: 1
+
+    consumer:
+      group-id: "erick_123"
+      key-deserializer: 'org.apache.kafka.common.serialization.StringDeserializer'
+      value-deserializer: 'org.apache.kafka.common.serialization.StringDeserializer'
+      max-poll-records: 500
+      auto-offset-reset: earliest
+      heartbeat-interval: 3000
+      enable-auto-commit: false
+      isolation-level: read_committed
