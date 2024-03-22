@@ -21,3 +21,6 @@ spring:
       heartbeat-interval: 3000
       enable-auto-commit: false
       isolation-level: read_committed
+
+    admin:
+      client-id: erick_lord

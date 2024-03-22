@@ -5,10 +5,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.admin.AdminClient;
 import org.apache.kafka.clients.admin.CreateTopicsResult;
 import org.apache.kafka.clients.admin.NewTopic;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
 
-@org.springframework.stereotype.Service
+@Service
 @RequiredArgsConstructor
 @Slf4j
 public class AdminService {
