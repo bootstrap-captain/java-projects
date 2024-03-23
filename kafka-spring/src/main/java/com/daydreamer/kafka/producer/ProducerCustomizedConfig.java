@@ -18,16 +18,10 @@ public class ProducerCustomizedConfig {
     @Value("${kafka.server}")
     private String kafkaServer;
 
-    @Bean(value = "producerWithDefaultPartition")
-    public KafkaProducer<String, Object> getKafkaProducer() {
-        Properties properties = getProperties();
-        return new KafkaProducer<>(properties);
-    }
-
     @Bean(value = "kafkaProducer")
     public KafkaProducer<String, Object> getKafkaProducerWithErickPartitioner() {
         Properties properties = getProperties();
-        properties.put(org.apache.kafka.clients.producer.ProducerConfig.PARTITIONER_CLASS_CONFIG, ErickPartition.class.getName());// 使用自定义分区器
+        /*properties.put(org.apache.kafka.clients.producer.ProducerConfig.PARTITIONER_CLASS_CONFIG, ErickPartition.class.getName());// 使用自定义分区器*/
         return new KafkaProducer<>(properties);
     }
 

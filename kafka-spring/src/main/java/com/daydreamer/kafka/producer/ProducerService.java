@@ -13,7 +13,7 @@ import javax.annotation.Resource;
 @Service
 @Slf4j
 public class ProducerService<K, V> {
-    @Resource(name = "producerWithDefaultPartition")
+    @Resource(name = "kafkaProducer")
     private KafkaProducer<String, Object> producer;
 
     /**
