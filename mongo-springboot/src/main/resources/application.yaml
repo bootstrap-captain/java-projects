@@ -1,4 +1,9 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://39.105.210.163:27017/erickdb
+      host: 39.105.210.163
+      port: 27017
+      database: erickdb
+      username: erickroot
+      password: '123456'               # 如果密码纯数字，则必须加''
+      authentication-database: admin   # 必须配置，不然就认证失败
